@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-09-30T16:19:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PriceBook1" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7eebaa4-068b-407f-bf7a-d4c2e72a1292">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cG9zbmV3LnN0b2NrX2hhc19pdGVtIEFTICwzNjcsMjYsNWQxMTNlMjgtN2Y3Ni00NGUxLThkOGEt&#xA;N2IwNzkxMDdjZTY5O3Bvc25ldy5pdGVtIEFTICw0OSwxMixlNmU4ZDUxYy1kODg3LTQwYzMtOWJj&#xA;NC1iNmUyNDUzNmRlMTI7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="pos922"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT posnew.item.item_name,
+	posnew.stock_has_item.retail_price,
+	posnew.stock_has_item.buying_price,
+	posnew.stock_has_item.discount
+FROM posnew.stock_has_item
+	INNER JOIN posnew.item ON 
+	 posnew.stock_has_item.item_item_code = posnew.item.item_code]]>
+	</queryString>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="retail_price" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="buying_price" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="discount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="3eb8e1ab-7e38-4368-89db-62b6501a8c67"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Price Book]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="0b5308cc-82cf-49a0-8011-6f875d4c5e32"/>
+				<text><![CDATA[Leaf Green SubTitle]]></text>
+			</staticText>
+			<image>
+				<reportElement x="263" y="0" width="312" height="68" uuid="087ce46a-a491-4570-a4f0-0045eb4e4961"/>
+				<imageExpression><![CDATA["C:/Users/hasini/JaspersoftWorkspace/MyReports/leaf_banner_green.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="20" y="34" width="519" height="3" uuid="d69c6691-e92e-45c5-bf2d-c1dc15dabb91"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="30" y="17" width="146" height="14" uuid="41112bfd-81c3-43f6-b492-60620ad96762"/>
+				<text><![CDATA[item name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="180" y="17" width="124" height="15" uuid="63402058-a0f1-42e0-94e8-fe0338cc5c4c"/>
+				<text><![CDATA[retail_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="302" y="18" width="122" height="15" uuid="cc7731b9-3eaa-4a3c-9eff-8f9327e9413c"/>
+				<text><![CDATA[buying_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="424" y="18" width="115" height="15" uuid="a07a7a12-642d-45bb-bca9-fc35ea97be8c"/>
+				<text><![CDATA[discount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="20" y="15" width="519" height="1" uuid="f367c019-9cb7-431c-8713-5a96f9b889aa"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="30" y="-1" width="146" height="14" uuid="e65a5d16-eef9-461e-863e-001c0d281d81"/>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="200" y="-1" width="94" height="15" uuid="8de7689f-8c1d-4efe-8214-9cf669f8d734"/>
+				<textFieldExpression><![CDATA[$F{retail_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="320" y="-1" width="104" height="15" uuid="cd39f9d2-50db-4999-bcd1-868cf211bebd"/>
+				<textFieldExpression><![CDATA[$F{buying_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="440" y="-1" width="98" height="15" uuid="b8df729c-0f3d-45fc-b114-ab1432a56be0"/>
+				<textFieldExpression><![CDATA[$F{discount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="20" y="-2" width="519" height="5" uuid="02519f40-8679-4e40-a1f1-699bc025a206"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="6f13e17d-4b46-4ede-ab63-9d2685ec9c16"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6857db7e-824a-4cda-b8dc-fe5c95aca145"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="ef9fc35f-c45f-4ec6-a5cc-ec2020109ea7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

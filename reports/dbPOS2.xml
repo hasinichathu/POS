@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>dbpossss</name><driver>com.mysql.jdbc.Driver</driver><username>root</username><password></password><savePassword>true</savePassword><url>jdbc:mysql://localhost/posnew</url><database></database><serverAddress></serverAddress><classpath>C:\Users\hasini\Downloads\mysql-connector-java-5.1.39\mysql-connector-java-5.1.39\mysql-connector-java-5.1.39-bin.jar</classpath></jdbcDataAdapter>
